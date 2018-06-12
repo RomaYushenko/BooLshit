@@ -2,8 +2,7 @@
 
 public class CreateSqures : MonoBehaviour
 {
-
-    GameObject[,] Gam = new GameObject[8, 8];
+    
     public GameObject pref, platform;
     float posX, posY, newPosX;
 
@@ -11,13 +10,15 @@ public class CreateSqures : MonoBehaviour
 
     void Start()
     {
+        GameObject[,] Gam = new GameObject[8, 8];
+        
         FirstPlaces();
+        
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 Gam[i, j] = Instantiate(pref, transform);
-
             }
         }
         
@@ -33,7 +34,6 @@ public class CreateSqures : MonoBehaviour
 
     void SortBlocks(GameObject[,] mas)
     {
-        
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -46,8 +46,10 @@ public class CreateSqures : MonoBehaviour
                 {
                     mas[i, j].transform.localPosition = new Vector2(newPosX, posY);
                 }
+                
                 newPosX += 0.2f;
             }
+            
             posY -= 0.2f;
             newPosX = posX;
         }
@@ -60,16 +62,15 @@ public class CreateSqures : MonoBehaviour
 
         posX = -(width / 2) + 0.15f;
         posY = (height / 2) - 0.15f;
+        
         newPosX = posX;
-
-
     }
 
     void ChangeSprite(GameObject [,] mas)
     {
-        for (int i=0; i<8; i++)
+        for (int i = 0; i < 8; i++)
         {
-            for (int j=0; j<8; j++)
+            for (int j = 0; j < 8; j++)
             {
                 int z = Random.Range(0, 14);
                 mas[i, j].GetComponent<SpriteRenderer>().sprite = sprites[z];
