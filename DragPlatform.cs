@@ -12,8 +12,10 @@ public class DragPlatform : MonoBehaviour
 
     void OnMouseDrag()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-        Platform.transform.localPosition = new Vector3(Platform.transform.localPosition.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        transform.localPosition = new Vector3(transform.localPosition.x, 
+                                                Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        Platform.transform.localPosition = new Vector3(Platform.transform.localPosition.x, 
+                                                        Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
     }
 
     void OnMouseUp()
@@ -27,7 +29,6 @@ public class DragPlatform : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, -3.5f);
             Platform.transform.localPosition = new Vector3(Platform.transform.localPosition.x, -3.8f);
-
         }
     }
 }
