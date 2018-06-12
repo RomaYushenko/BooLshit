@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-public class PopUpClick : MonoBehaviour {
+public class PopUpClick : MonoBehaviour 
+{
 
     public GameObject PopUp;
 
     void OnMouseDown()
     {
         PopUp.SetActive(false);
-        GameObject[] sss;
-        sss = GameObject.FindGameObjectsWithTag("Color");
+        GameObject[] sss = GameObject.FindGameObjectsWithTag("Color");
         
-        for (int i =0; i<sss.Length; i++)
+        for (int i = 0; i < sss.Length; i++)
         {
             sss[i].gameObject.GetComponent<SpriteRenderer>().color = Color.black;
         }
